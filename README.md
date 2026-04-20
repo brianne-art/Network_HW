@@ -1,2 +1,4 @@
 # Networking HW
-
+  1. Why is ReLU preferred for modern networks? Its because a sigmoid saturates near 0 or 1, making the gradient nearly zero for large/small inputs. This "vanishing gradient" problem can makelearning very slow in deep networks because of the gradient signal shrinks as it propagates through layers so its not as effiecent vs ReLU's gradient which is simply 1 for positive inputs, so it doesn't saturate and gradients flow more cleanly and that what we want.
+ 
+  2. What is leaky ReLU and why is it sometimes preferred? The Basic ReLU outputs 0 for any negative input, so a neuron whose pre-activation is always negative gets a gradient of 0 forever and it "dies" and stops learning. Leaky ReLU fixes this by using a smaller slope for negative inputs instead of 0, so there's always a nonzero gradient and dead neurons can recover better. 
